@@ -20,10 +20,19 @@ public final class MenuGeral {
             opcao = lerOpcao(scanner);
 
             switch (opcao) {
-                case 1 -> MenuPessoa.exibir(scanner);
-                case 2 -> MenuProduto.exibir(scanner);
-                case 0 -> System.out.println("Saindo do sistema...");
-                default -> System.out.println("Opção inválida!");
+                case 1:
+                    MenuPessoa.exibir(scanner);
+                    break;
+                case 2:
+                    MenuProduto.exibir(scanner);
+                    break;
+                case 0:
+                    System.out.println("Saindo do sistema...");
+                    break;
+
+                    default:
+                    System.out.println("Opção inválida!");
+                    break;
             }
         } while (opcao != 0);
 

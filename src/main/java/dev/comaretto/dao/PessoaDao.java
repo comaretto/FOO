@@ -16,7 +16,7 @@ public class PessoaDao implements Crud<Pessoa> {
 
     @Override
     public List<Pessoa> listar() {
-        return List.of();
+        return listaPessoas;
     }
 
     @Override
@@ -26,10 +26,12 @@ public class PessoaDao implements Crud<Pessoa> {
 
     @Override
     public Pessoa buscar(int indice) {
-    return null;
+
+        return this.listaPessoas.get(indice);
     }
 
     @Override
     public void excluir(int indice) {
+        listaPessoas.remove(indice);
     }
 }

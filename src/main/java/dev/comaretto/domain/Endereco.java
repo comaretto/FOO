@@ -1,6 +1,7 @@
 package dev.comaretto.domain;
 
 public class Endereco {
+    private String estado;
     private String rua;
     private int numero;
     private String cidade;
@@ -8,10 +9,19 @@ public class Endereco {
     public Endereco() {
     }
 
-    public Endereco(String rua, int numero, String cidade) {
+    public Endereco(String estado, String rua, int numero, String cidade) {
+        this.estado = estado;
         this.rua = rua;
         this.numero = numero;
         this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public String getRua() {

@@ -1,5 +1,4 @@
 package dev.comaretto.dao;
-import dev.comaretto.domain.Pessoa;
 import dev.comaretto.domain.Produto;
 import dev.comaretto.interfaces.Crud;
 
@@ -16,22 +15,23 @@ public class ProdutoDao implements Crud<Produto> {
 
     @Override
     public List<Produto> listar() {
-        return List.of();
+        return listarProdutos;
     }
 
     @Override
     public void atualizar(int indice, Produto objeto) {
-
+        listarProdutos.set(indice, objeto);
     }
 
     @Override
-    public Pessoa buscar(int indice) {
-        return null;
+    public Produto buscar(int indice) {
+
+        return this.listarProdutos.get(indice);
     }
 
     @Override
     public void excluir(int indice) {
-
+        listarProdutos.remove(indice);
     }
 
 }

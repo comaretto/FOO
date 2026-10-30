@@ -9,26 +9,25 @@ public abstract class Produto extends Base {
     private String nome;
     private BigDecimal preco;
 
-    public Produto(String codigo, String nome, BigDecimal preco) {
-        if (codigo == null || codigo.isBlank()) {
-            throw new IllegalArgumentException("O codigo e obrigatorio.");
-        }
-        this.codigo = codigo;
-        setNome(nome);
-        setPreco(preco);
+    public void setTipo(String tipo) {
     }
 
     public Produto() {
-
     }
 
-    public String getCodigo(int i) {
+    public String getCodigo() {
         return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     public String getNome() {
         return nome;
     }
+
+    public abstract String getTipo();
 
     public void setNome(String nome) {
         if (nome == null || nome.isBlank()) {
@@ -47,9 +46,5 @@ public abstract class Produto extends Base {
             throw new IllegalArgumentException("O preco nao pode ser negativo.");
         }
         this.preco = preco;
-    }
-
-    public void setCodigo(int i) {
-
     }
 }
